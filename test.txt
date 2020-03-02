@@ -1,0 +1,147 @@
+function Main()
+  SN = gg.choice({
+  "小飞机无敌",
+  "超时空专用",
+  "退出修仙模式"
+ }, nil, "VX：172199586")
+  if SN == 1 then
+    a()
+  end
+  if SN == 2 then
+   b()
+  end
+  if SN == 3 then
+   c()
+  end
+  if SN == 4 then
+   d()
+  end
+  if SN == 5 then
+   e()
+  end
+  if SN == 6 then
+   f()
+  end
+  if SN == 7 then
+   Exit()
+  end
+  XGCK = -1
+end
+
+
+
+function a()
+gg.clearResults()
+gg.setRanges(gg.TYPE_AUTO)
+gg.searchNumber("262;18::", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("18", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(500, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("500", gg.TYPE_DWORD)
+gg.searchNumber("262;500::", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber("262", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(500, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("98789", gg.TYPE_DWORD)
+gg.toast("开启成功")
+end
+
+
+function b()
+gg.clearResults()
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("0000025Fh;00000001h;056BE7A4h::9", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("056BE7A4h", gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+jg=gg.getResults(1000)
+if jg == nil then
+gg.toast("开启失败")
+else
+dzy=jg.address
+dz=jg.address+8
+--十进制转到十六进制
+yz16=string.format("%#X",dzy)
+z16=string.format("%#X",dz)
+gg.toast(z16)
+gg.clearResults()
+gg.searchAddress(z16 , -1 , gg.TYPE_DWORD , gg.SIGN_EQUAL , 0 , -1)
+gg.getResults(1)
+gg.editAll("999999", gg.TYPE_DWORD)
+gg.toast("地址测试成功")
+end
+end
+
+
+
+function c()
+gg.clearResults()
+gg.setRanges(gg.REGION_BAD)
+gg.searchNumber("搜索数值", gg.TYPE_FLOAT,false,gg.SIGN_EQUAL,0, -1)
+gg.searchNumber("改善数值", gg.TYPE_FLOAT,false,gg.SIGN_EQUAL,0,-1)
+gg.getResults(10)
+gg.editAll("修改数值",gg.TYPE_FLOAT)
+gg.toast("开启成功")
+end
+
+
+
+function d()
+gg.clearResults()
+gg.setRanges(gg.REGION_BAD)
+gg.searchNumber("搜索数值", gg.TYPE_FLOAT,false,gg.SIGN_EQUAL,0, -1)
+gg.searchNumber("改善数值", gg.TYPE_FLOAT,false,gg.SIGN_EQUAL,0,-1)
+gg.getResults(10)
+gg.editAll("修改数值",gg.TYPE_FLOAT)
+gg.toast("开启成功")
+end
+
+
+
+function e()
+gg.clearResults()
+gg.setRanges(gg.REGION_BAD)
+gg.searchNumber("搜索数值", gg.TYPE_FLOAT,false,gg.SIGN_EQUAL,0, -1)
+gg.searchNumber("改善数值", gg.TYPE_FLOAT,false,gg.SIGN_EQUAL,0,-1)
+gg.getResults(10)
+gg.editAll("修改数值",gg.TYPE_FLOAT)
+gg.toast("开启成功")
+end
+
+
+
+function f()
+gg.clearResults()
+gg.setRanges(gg.REGION_BAD)
+gg.searchNumber("搜索数值", gg.TYPE_FLOAT,false,gg.SIGN_EQUAL,0, -1)
+gg.searchNumber("改善数值", gg.TYPE_FLOAT,false,gg.SIGN_EQUAL,0,-1)
+gg.getResults(10)
+gg.editAll("修改数值",gg.TYPE_FLOAT)
+gg.toast("开启成功")
+end
+
+
+
+function Exit()
+print("这里是退出脚本后的提示文字")
+os.exit()
+end
+cs = "这里可以改成你的QQ"
+
+
+
+while true do
+  if gg.isVisible(true) then
+    XGCK = 1
+    gg.setVisible(false)
+  end
+  gg.clearResults()
+  if XGCK == 1 then
+    Main()
+  end
+end
+
+
+
+
+
+
+
+
+
